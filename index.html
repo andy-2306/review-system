@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      width: 90%;
+      padding: 15px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>⭐ Apna Review Select Karein ⭐</h2>
+
+<button onclick="copyReview('full')">Full Review</button>
+<button onclick="copyReview('medium')">Medium Review</button>
+<button onclick="copyReview('short')">Short Review</button>
+
+<script>
+function copyReview(type) {
+
+  let reviewText = "";
+
+  if(type === 'full') {
+    reviewText = `Silai aur fitting bahut perfect thi 👌
+Kapde ka finishing clean tha aur design bilkul waise hi bana jaise bola tha
+Behaviour bhi bahut accha tha
+
+Highly recommended ladies tailor 👍`;
+  }
+
+  if(type === 'medium') {
+    reviewText = `Bahut hi acchi stitching hai 👍
+Fitting perfect thi aur delivery time bhi on-time mila
+Staff ka behaviour polite hai
+
+Best ladies tailor in Thane 😊`;
+  }
+
+  if(type === 'short') {
+    reviewText = `Perfect fitting 👌
+Good stitching 👍
+Highly recommended`;
+  }
+
+  navigator.clipboard.writeText(reviewText);
+
+  alert("Review copy ho gaya! Ab Google par paste karein 👍");
+
+  setTimeout(function() {
+    window.location.href = "https://search.google.com/local/writereview?placeid=ChIJiXjYaG-55zsRXmOs-Sw5veE";
+  }, 1500);
+}
+</script>
+
+</body>
+</html>
